@@ -1,0 +1,71 @@
+/* Firebug styles */
+#firerunner-container {
+	width: 800px;
+	padding: 10px 20px;
+}
+
+#firerunner-container h1 {
+	background: url(chrome://firerunner/skin/logo.png) no-repeat 0 -6px;
+	margin: 0 0 10px;
+	padding-left: 36px;
+	border-bottom: 1px solid #000;
+}
+
+#firerunner-help-text {
+	font-weight: normal;
+	font-size: 10px;
+}
+
+.firerunner-field {
+	width: 70%;
+	margin-right: 10px;
+}
+
+#firerunner-container h2 {
+	margin: 20px 0 10px;
+	border-bottom: 1px solid #aaa;
+}
+
+.firerunner-results-container.initial-view {
+	display: none;
+}
+
+.firerunner-results-container.initial-view {
+	display: none;
+}
+
+.firerunner-results .firerunner-result-item {
+	display: block;
+	cursor: pointer;
+	color: #008;
+	padding: 4px 10px 4px 25px;
+	border-bottom: 1px solid #ccc;
+}
+
+.firerunner-results .firerunner-result-item .firerunner-run-element {
+	margin: 0 10px 0 0;
+	padding-left: 10px;
+}
+
+.firerunner-results .firerunner-result-item.odd {
+	background-color: #eee;
+}
+
+.firerunner-results .firerunner-result-item span.node-name {
+	color: #00f;
+}
+
+.firerunner-results .firerunner-result-item span.attribute-value {
+	color: #f00;
+}
+
+.firerunner-results .firerunner-result-item .inner-code-container {
+	display: block;
+	cursor: auto;
+	padding-left: 10px;
+}
+
+.firerunner-results .firerunner-result-item h1 {
+	margin: 0 0 10px;
+	border-bottom: none;
+}

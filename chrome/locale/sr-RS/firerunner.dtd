@@ -1,0 +1,8 @@
+<!ENTITY showfirerunner "Prikaži Firerunner za Firebug">
+<!ENTITY firerunelement "Pronađi element koristeći Firerunner">
+<!ENTITY firerunnerautoselect "Automatski izaberi">
+<!ENTITY firerunnerclear "Počisti">
+<!ENTITY firerunnerhide "Sakrij">
+<!ENTITY firerunnerautoselectelement "Automatski izaberi HTML element kada aktiviraš ovo i pređeš mišem preko njega">
+<!ENTITY firerunnerclearresults "Počisti rezultate">
+<!ENTITY firerunnerhidefirebug "Sakrij Firebug">

@@ -1,0 +1,8 @@
+<!ENTITY showfirerunner "Toon Firerunner voor Firebug">
+<!ENTITY firerunelement "Firerun element">
+<!ENTITY firerunnerautoselect "Automatisch selecteren">
+<!ENTITY firerunnerclear "Wissen">
+<!ENTITY firerunnerhide "Verbergen">
+<!ENTITY firerunnerautoselectelement "Activeer deze functie om automatisch met de muis het HTML element te selecteren">
+<!ENTITY firerunnerclearresults "Wis resultaten">
+<!ENTITY firerunnerhidefirebug "Firebug verbergen">

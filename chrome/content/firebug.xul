@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://firerunner/skin/firerunner.css" type="text/css"?> 
+<!DOCTYPE window SYSTEM "chrome://firerunner/locale/firerunner.dtd">
+<overlay id="sample" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	
+		<script type="application/x-javascript" src="dLite.js" />
+		<script type="application/x-javascript" src="firebug.js" />
+		
+		<commandset id="mainCommandSet">
+			<!-- <command id="cmd_firerunnerAutoSelectButton" key="firerunner-auto-select-key" oncommand="Firebug.firerunnerModel.autoSelect(Firebug.currentContext)"/> -->
+			<command id="cmd_firerunnerClearButton" key="firerunner-clear-key" oncommand="Firebug.firerunnerModel.clear(Firebug.currentContext)"/>
+			<command id="cmd_firerunnerHideButton" key="firerunner-hide-key" oncommand="Firebug.firerunnerModel.hide(Firebug.currentContext)"/>
+	    </commandset>
+
+	    <toolbar id="fbToolbar" align="center">
+	        <hbox id="fbToolbarInner" insertbefore="fbDetachButton" flex="1" align="center">
+	            <hbox id="fbfirerunnerButtons" insertafter="fbNetButtons">
+	                <toolbarseparator/>
+			<!--<toolbarbutton id="firerunnerAutoSelectButton" label="&firerunnerautoselect;" class="toolbar-text-button" tooltiptext="&firerunnerautoselectelement;" command="cmd_firerunnerAutoSelectButton"/>-->
+					<toolbarbutton id="firerunnerClearButton" label="&firerunnerclear;" class="toolbar-text-button" tooltiptext="&firerunnerclearresults;" command="cmd_firerunnerClearButton"/>
+					<toolbarbutton id="firerunnerHideButton" label="&firerunnerhide;" class="toolbar-text-button" tooltiptext="&firerunnerhidefirebug;" command="cmd_firerunnerHideButton"/>
+	           </hbox>
+	       </hbox>
+	    </toolbar>
+	
+		<stringbundleset>
+			<stringbundle id="firerunnerstrings" src="chrome://firerunner/locale/firerunner.properties"/>
+		</stringbundleset>		
+
+</overlay>

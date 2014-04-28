@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://firerunner/content/browser.css" type="text/css"?> 
+<!DOCTYPE window SYSTEM "chrome://firerunner/locale/firerunner.dtd">
+<overlay id="sample" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+		
+		<menupopup id="menu_ToolsPopup"> 
+			<menuitem id="run-firerunner" label="&showfirerunner;" key="firerunner-run-key" oncommand="Firebug.firerunnerModel.show(Firebug.currentContext)"/> 
+		</menupopup>
+		
+		<keyset>
+			<key id="firerunner-run-key" modifiers="accel shift" key="V" oncommand="Firebug.firerunnerModel.show(Firebug.currentContext)"/>
+		</keyset>
+		
+		<popup id="contentAreaContextMenu">
+	        <menuitem id="firerunner-current-element" label="&firerunelement;" insertbefore="menu_firebugInspect" oncommand="Firebug.firerunnerModel.show(Firebug.currentContext); Firebug.firerunnerModel.run(Firebug.currentContext, document.popupNode)"/>
+	    </popup>
+		
+</overlay>

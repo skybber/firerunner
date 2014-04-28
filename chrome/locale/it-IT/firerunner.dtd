@@ -1,0 +1,8 @@
+<!ENTITY showfirerunner "Mostra Firerunner per Firebug">
+<!ENTITY firerunelement "Evidenzia elemento con Firerunner">
+<!ENTITY firerunnerautoselect "Selezione automatica">
+<!ENTITY firerunnerclear "Cancella">
+<!ENTITY firerunnerhide "Nascondi">
+<!ENTITY firerunnerautoselectelement "Attiva per selezionare automaticamente un elemento HTML sostandoci sopra col puntatore">
+<!ENTITY firerunnerclearresults "Cancella i risultati">
+<!ENTITY firerunnerhidefirebug "Nascondi Firebug">

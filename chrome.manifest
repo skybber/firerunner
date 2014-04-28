@@ -1,0 +1,17 @@
+content     firerunner    chrome/content/
+content     firerunner    chrome/content/ contentaccessible=yes
+
+overlay chrome://firebug/content/firebugOverlay.xul chrome://firerunner/content/firebug.xul
+overlay chrome://browser/content/browser.xul chrome://firerunner/content/browser.xul
+
+locale	firerunner	en-US	chrome/locale/en-US/
+locale	firerunner	sv-SE	chrome/locale/sv-SE/
+locale	firerunner	da-DK	chrome/locale/da-DK/
+locale	firerunner	de-DE	chrome/locale/de-DE/
+locale	firerunner	nl-NL	chrome/locale/nl-NL/
+locale	firerunner	pl-PL	chrome/locale/pl-PL/
+locale	firerunner	it-IT	chrome/locale/it-IT/
+locale	firerunner	sr-RS	chrome/locale/sr-RS/
+locale	firerunner	fr-FR	chrome/locale/fr-FR/
+
+skin	firerunner	classic/1.0	skin/

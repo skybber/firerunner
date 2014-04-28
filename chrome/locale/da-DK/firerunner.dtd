@@ -1,0 +1,8 @@
+<!ENTITY showfirerunner "Vis Firerunner for Firebug">
+<!ENTITY firerunelement "Firerun element">
+<!ENTITY firerunnerautoselect "Auto-vælg">
+<!ENTITY firerunnerclear "Nulstil">
+<!ENTITY firerunnerhide "Skjul">
+<!ENTITY firerunnerautoselectelement "Auto-vælg HTML element ved at aktivere dette og holde musen over det">
+<!ENTITY firerunnerclearresults "Nulstil resultater">
+<!ENTITY firerunnerhidefirebug "Skjul Firebug">

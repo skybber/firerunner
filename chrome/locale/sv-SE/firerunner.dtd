@@ -1,0 +1,8 @@
+<!ENTITY showfirerunner "Visa Firerunner till Firebug">
+<!ENTITY firerunelement "Firerun element">
+<!ENTITY firerunnerautoselect "Autovälj element">
+<!ENTITY firerunnerclear "Rensa">
+<!ENTITY firerunnerhide "Göm">
+<!ENTITY firerunnerautoselectelement "Autovälj HTML-element genom att aktivera detta och sedan styra över elementet">
+<!ENTITY firerunnerclearresults "Rensa resultat">
+<!ENTITY firerunnerhidefirebug "Göm Firebug">
