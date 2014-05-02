@@ -1,8 +1,8 @@
-<!ENTITY showfirefinder "Pokaż Firefinder dla Firebuga">
+<!ENTITY showfirerunner "Pokaż firerunner dla Firebuga">
 <!ENTITY firerunelement "Znajdź element">
-<!ENTITY firefinderautoselect "Wskaż">
-<!ENTITY firefinderclear "Wyczyść">
-<!ENTITY firefinderhide "Ukryj">
-<!ENTITY firefinderautoselectelement "Wskaż kursorem element HTML">
-<!ENTITY firefinderclearresults "Wyczyść wyniki">
-<!ENTITY firefinderhidefirebug "Ukryj okno Firebuga">
+<!ENTITY firerunnerautoselect "Wskaż">
+<!ENTITY firerunnerclear "Wyczyść">
+<!ENTITY firerunnerhide "Ukryj">
+<!ENTITY firerunnerautoselectelement "Wskaż kursorem element HTML">
+<!ENTITY firerunnerclearresults "Wyczyść wyniki">
+<!ENTITY firerunnerhidefirebug "Ukryj okno Firebuga">

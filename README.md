@@ -30,7 +30,7 @@ Configuration parameters:
     default value: **//div[contains(@class,'viewInfo')]**
 
 
-- extensions.firebug.firerunner.paramAttribute : name of attribute of info 
+- extensions.firebug.firerunner.paramTagAttribute : name of attribute of info 
   tag where the file name (or another information) is stored
 
     default value: **title**
@@ -39,11 +39,13 @@ Configuration parameters:
     
   default value: **eclipse**
 
-- extensions.firebug.firerunner.paramFunc : body of the javascript function 
-  returning argument that is passed to executed command. ParamAttribute value
-  is passed by variable "x".
+- extensions.firebug.firerunner.paramRegExp: regular expression intended 
+  used to extract file name from paramTagAttribute. Extracted value is
+  passed to execute parameter formatter.
+    
+    default value: **view:(.*)**
+- extensions.firebug.firerunner.execParam: parameter of executable command.
+  {0} is replaced by value extracted from patamTagAttribute using regular 
+  expression paramRegExp.
 
-    default value: 
-```js
-return '--launcher.openFile /project_path/' + x.substr(5);
-```
+  default value: **--launcher.openFile /home/lada/workspace/project/web/{0}**

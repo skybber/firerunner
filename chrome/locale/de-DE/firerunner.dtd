@@ -1,8 +1,8 @@
-<!ENTITY showfirefinder "Zeige Firerunner für Firebug">
+<!ENTITY showfirerunner "Zeige Firerunner für Firebug">
 <!ENTITY firerunelement "Firerun Element">
-<!ENTITY firefinderautoselect "Automatische Auswahl">
-<!ENTITY firefinderclear "Löschen">
-<!ENTITY firefinderhide "Ausblenden">
-<!ENTITY firefinderautoselectelement "Einschalten und auf HTML-Elemente zeigen, diese werden dann automatisch ausgewählt">
-<!ENTITY firefinderclearresults "Ergebnisliste leeren">
-<!ENTITY firefinderhidefirebug "Verstecke Firebug">
+<!ENTITY firerunnerautoselect "Automatische Auswahl">
+<!ENTITY firerunnerclear "Löschen">
+<!ENTITY firerunnerhide "Ausblenden">
+<!ENTITY firerunnerautoselectelement "Einschalten und auf HTML-Elemente zeigen, diese werden dann automatisch ausgewählt">
+<!ENTITY firerunnerclearresults "Ergebnisliste leeren">
+<!ENTITY firerunnerhidefirebug "Verstecke Firebug">

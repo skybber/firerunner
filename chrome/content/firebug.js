@@ -55,11 +55,11 @@ FBL.ns(function () {
 		
 		Firebug.firerunnerModel = extend(Firebug.Module, {
 			baseContentAdded : false,
-		    showPanel : function(browser, panel) {
+			showPanel : function(browser, panel) {
 				var isPanel = panel && panel.name === panelName, 
 					firerunnerButtons = Firebug.chrome.$("fbfirerunnerButtons"),
 					state = getFirerunnerState();
-		    },
+			},
 		
 			addBaseContent : function (panelNode) {
 				var baseContent = domplate({
@@ -147,11 +147,10 @@ FBL.ns(function () {
 					resultsContainer = dLite.elmsByClass("firerunner-results-container", "div", panelNode)[0],
 					results = dLite.elmsByClass("firerunner-results", "div", panelNode)[0],
 					resultsHeader = dLite.elmsByClass("firerunner-results-header", "h2", panelNode)[0],
-					firerunnerResultItems,
-
 					execCmd = Firebug.getPref(Firebug.prefDomain, "firerunner.execCmd"),
-					paramFunc = Firebug.getPref(Firebug.prefDomain, "firerunner.paramFunc"),
-					paramAttribute = Firebug.getPref(Firebug.prefDomain, "firerunner.paramAttribute"),
+					execParam = Firebug.getPref(Firebug.prefDomain, "firerunner.execParam"),
+					paramRegExp = new RegExp(Firebug.getPref(Firebug.prefDomain, "firerunner.paramRegExp")),
+					paramTagAttribute = Firebug.getPref(Firebug.prefDomain, "firerunner.paramTagAttribute"),
 
 					// JavaScript and CSS to add to the web browser content
 					currentDocument = Firebug.currentContext.window.document,
@@ -166,7 +165,8 @@ FBL.ns(function () {
 							XPath = regExpIsXPath.test(filterExpression),
 							resultItem = "",
 							state = Firebug.firerunnerModel.clear(context),
-							matchingElements;
+							matchingElements,
+							firerunnerResultItems;
 						
 						// Find matching elements
 						if (typeof element !== "undefined") {
@@ -201,7 +201,7 @@ FBL.ns(function () {
 								// Run element link
 								var firerunnerExecElement = document.createElement("div");
 								firerunnerExecElement.className = "firerunner-run-element";
-								var paramAttrValue = elm.getAttribute(paramAttribute);
+								var paramAttrValue = elm.getAttribute(paramTagAttribute);
 								var paramCmdLabel = document.createTextNode(paramAttrValue);
 								firerunnerExecElement.appendChild(paramCmdLabel);
 								firerunnerElement.appendChild(firerunnerExecElement);
@@ -233,25 +233,30 @@ FBL.ns(function () {
 								elm.addEventListener("click", function (evt) {
 									var targetClassName = evt.target.className;
 									if (regExpRunner.test(targetClassName)) {
-										var paramAttrValue, fileName, func, execArg, execArgAr;
+										var paramTagAttrValue, execArg, match;
 										matchingElm = state.matchingElements[this.getAttribute("ref")];
-										paramAttrValue = matchingElm.getAttribute(paramAttribute);
-										func = new Function("x", paramFunc);
-										execArg = func(paramAttrValue);
-										var apt_list = Components.classes["@mozilla.org/file/local;1"].createInstance(Components.interfaces.nsILocalFile);
-										apt_list.initWithPath(execCmd);
-										var process = Components.classes["@mozilla.org/process/util;1"].
-										createInstance(Components.interfaces.nsIProcess);
-										process.init(apt_list);
-										if (execArg != null && execArg.length > 0) {
-											execArgAr = execArg.split(" ");
-											process.run(false, execArgAr, execArgAr.length);
+										paramTagAttrValue = matchingElm.getAttribute(paramTagAttribute);
+										match = paramRegExp.exec(paramTagAttrValue); 
+										if (match != null) {
+											execArg = match[1];
+											if (execArg != null) {
+												var parametrizedExecParamArg = execParam.replace("{0}", execArg);
+												var execParamArray = parametrizedExecParamArg.split(" ");
+												var apt_list = Components.classes["@mozilla.org/file/local;1"].createInstance(Components.interfaces.nsILocalFile);
+												apt_list.initWithPath(execCmd);
+												var process = Components.classes["@mozilla.org/process/util;1"].
+												createInstance(Components.interfaces.nsIProcess);
+												process.init(apt_list);
+												process.run(false, execParamArray, execParamArray.length);
+											}
 										}
 									}
 								}, false);
 							}
 						}
-						resultsHeader.innerHTML = translations.firerunnermatchingelements + ": " + matchingElements.length;
+						// resultsHeader.innerHTML = translations.firerunnermatchingelements + ": " + matchingElements.length;
+						var paramCmdLabel = document.createTextNode(translations.firerunnermatchingelements + ": " + matchingElements.length);
+						resultsHeader.appendChild(paramCmdLabel);
 						resultsContainer.className = resultsContainer.className.replace(regExpInitialViewClass, "").replace(regExpSpaceFix, "");
 					};
 															
@@ -265,7 +270,7 @@ FBL.ns(function () {
 						head.appendChild(css);
 					}
 					parse();
-		    },
+			},
 		
 			show : function (context) {
 				// Forces Firebug to be shown, even if it's off
@@ -281,7 +286,7 @@ FBL.ns(function () {
 		
 			hide : function (context) {
 				Firebug.toggleBar(false, panelName);
-		    },
+			},
 		
 			selectCurrentElm : function (evt) {
 				Firebug.firerunnerModel.run(Firebug.currentContext, evt.target);
