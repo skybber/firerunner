@@ -2,8 +2,8 @@ firerunner
 ==========
 
 Firebug extension intended to open source files of web pages in running IDE like
-eclipse, IntelliJ IDEA or another editor. It is very effective especially 
-for large single-page projects. 
+eclipse, IntelliJ IDEA or another editor. It speeds up development productivity 
+especially for large single-page projects. 
   Extension can be parametrized to execute anything with whatever argument so 
 another usecases can be found.
 
