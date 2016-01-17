@@ -38,13 +38,13 @@ Configuration parameters (about:config):
     
   default value: **eclipse**
 
-- extensions.firebug.firerunner.paramRegExp: regular expression intended 
+- extensions.firebug.firerunner.paramRegExp: regular expression  
   used to extract file name from paramTagAttribute. Extracted value is
-  passed to execute parameter formatter.
+  passed to the parameter formatter.
     
     default value: **view:(.*)**
-- extensions.firebug.firerunner.execParam: parameter of executable command.
-  {0} is replaced by value extracted from patamTagAttribute using regular 
+- extensions.firebug.firerunner.execParam: argument(parameter) of execCmd.
+  {0} is replaced by value extracted from paramTagAttribute using regular 
   expression paramRegExp.
 
   default value: **--launcher.openFile /home/lada/workspace/project/web/{0}**
