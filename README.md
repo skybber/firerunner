@@ -9,11 +9,11 @@ another usecases can be found.
 
 Mechanism: 
 
-1. Information about the source file is stored in HTML info tag (DIV is 
-suggested). DIV has zero size so it does not destroy the page layout. DIV 
-must be marked to be found by provided XPATH query (marking by property 
-class is suggested). Multiple info tags can be placed on the page.
-Following form of info element is expected by default:
+1. Information about the source file is stored in HTML "info" tag (DIV tag is 
+suggested). DIV can have zero size so it does not destroy the page layout or can be rendered 
+conditionaly (if application is in debug mode) DIV must be marked in some way to be found 
+by provided XPATH query (marking by property "class" is suggested). Multiple info tags 
+can be placed on the page. Following form of info element is expected by default:
 
 ```html
     <div title="view:<path-to-source-file>" class="viewInfo">
@@ -22,7 +22,7 @@ Following form of info element is expected by default:
 3. Click on the found link to open source file in specified editor/IDE.
 
 
-Configuration parameters:
+Configuration parameters (about:config):
 
 - extensions.firebug.firerunner.filter: Xpath filter used to find info tags.
 
