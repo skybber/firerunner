@@ -201,6 +201,7 @@ FBL.ns(function () {
 								// Run element link
 								var firerunnerExecElement = document.createElement("div");
 								firerunnerExecElement.className = "firerunner-run-element";
+                                                                firerunnerExecElement.ref = j;
 								var paramAttrValue = elm.getAttribute(paramTagAttribute);
 								var paramCmdLabel = document.createTextNode(paramAttrValue);
 								firerunnerExecElement.appendChild(paramCmdLabel);
@@ -245,6 +246,7 @@ FBL.ns(function () {
 												var apt_list = Components.classes["@mozilla.org/file/local;1"].createInstance(Components.interfaces.nsILocalFile);
 												apt_list.initWithPath(execCmd);
 												var process = Components.classes["@mozilla.org/process/util;1"].
+
 												createInstance(Components.interfaces.nsIProcess);
 												process.init(apt_list);
 												process.run(false, execParamArray, execParamArray.length);
